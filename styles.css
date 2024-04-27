@@ -16,6 +16,15 @@ main {
     border-radius: 15px;
 }
 
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+
 h1 {
     margin: 0;
 }

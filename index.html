@@ -9,6 +9,7 @@
     </head>
     <body>
         <main>
+        <div class="active">
         <h1>Let's play rock, paper, scissors?</h1>
         <form id="user-choice">
             <label for="option">Make your choice below:</label>
@@ -19,6 +20,13 @@
             </select>
             <input type="submit" value="I'm ready!">
         </form>
+        </div>
+        <div id="result" class="hidden">
+            <h2 id="displayBotChoice">Bot chose X</h2>
+            <p id="displayResult">You win/lose</p>
+            <p id="displayUserPoints">Your points: </p>
+            <p id="displayBotPoints">Bot points: </p>
+        </div>
         </main>
         <script src="script.js"></script>
     </body>
