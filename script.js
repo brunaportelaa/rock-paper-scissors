@@ -1,3 +1,6 @@
+let userPoints = 0
+let botPoints = 0
+
 // Grab value inserted by user
 document.getElementById('user-choice').addEventListener('submit', e => {
     e.preventDefault()
@@ -5,6 +8,8 @@ document.getElementById('user-choice').addEventListener('submit', e => {
     let displayResult = document.getElementById('displayResult')
     let displayUserPoints = document.getElementById('displayUserPoints')
     let displayBotPoints = document.getElementById('displayBotPoints')
+
+
     let result = document.getElementById('result')
     let select = document.getElementById('option')
     let option = select.value
@@ -23,8 +28,10 @@ document.getElementById('user-choice').addEventListener('submit', e => {
             displayResult.textContent = "Its a tie"
         } else if (option === 'paper') {
             displayResult.textContent = 'You win'
+            userPoints += 1
         } else {
             displayResult.textContent = 'You lose'
+            botPoints += 1
         }
 
 
@@ -34,10 +41,12 @@ document.getElementById('user-choice').addEventListener('submit', e => {
         
         if (option === 'rock') {
             displayResult.textContent = "You lose"
+            botPoints += 1
         } else if (option === 'paper') {
             displayResult.textContent = 'Its a tie'
         } else {
             displayResult.textContent = 'You win'
+            userPoints += 1
         }
 
     } else if (botChoice === 2) {
@@ -46,8 +55,10 @@ document.getElementById('user-choice').addEventListener('submit', e => {
         
         if (option === 'rock') {
             displayResult.textContent = "You win"
+            userPoints += 1
         } else if (option === 'paper') {
             displayResult.textContent = 'You lose'
+            botPoints += 1
         } else {
             displayResult.textContent = 'Its a tie'
         }
@@ -58,5 +69,9 @@ document.getElementById('user-choice').addEventListener('submit', e => {
 
     //Display results
     result.classList.remove('hidden')
+    
+    //Displaying user points
+    displayUserPoints.textContent = `Your points: ${userPoints}`
+    displayBotPoints.textContent = `Bot points: ${botPoints}`
 
 })
